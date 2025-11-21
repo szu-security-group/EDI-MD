@@ -58,10 +58,16 @@ public class AuditProcess extends AuditComponent {
 
         ChallengeData[] challengeDatas = new ChallengeData[esNum];
 
+        Random random = new Random();
+        PseudoRandom prHMAC = new PseudoRandom(key.getKeyHMAC());
+        PseudoRandom prMaster = new PseudoRandom(key.getKeyMaster());
+        byte[] keyHMAC = prHMAC.generate(random.nextInt());
+        byte[] keyMaster = prMaster.generate(random.nextInt());
+
         for(int j = 0; j < esNum; j++){
-            PseudoRandom pseudoRandom = new PseudoRandom(key.getKeyMaster());
+            PseudoRandom pseudoRandom = new PseudoRandom(keyMaster);
             byte[] tempKey = pseudoRandom.generate(j);
-            challengeDatas[j] = new ChallengeData(key.getKeyHMAC(), tempKey);
+            challengeDatas[j] = new ChallengeData(keyHMAC, tempKey);
         }
 
         /**
