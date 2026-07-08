@@ -1,4 +1,4 @@
-# EDI-MD: Efficient and Secure Data Integrity Auditing for Multi-Data Edge Computing
+# EDI-MD: Efficient and Secure Data Integrity Auditing for Multi-Data Edge Services
 
 This is the companion source code repository for our EDI-MD scheme. Edge computing has emerged as a pivotal paradigm to reduce latency by deploying computational resources closer to end-users. However, ensuring data integrity in edge computing environments—known as the Edge Data Integrity (EDI) problem—remains a critical challenge, especially in multi-data scenarios where edge servers store heterogeneous data replicas to meet region-specific demands.
 
